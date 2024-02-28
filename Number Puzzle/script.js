@@ -8,7 +8,13 @@ function updateView() {
   let board = "";
   for (let i = 0; i < startNumber.length; i++) {
     const num = startNumber[i];
-    board += `<div onclick="swapNumbers(${num})" id=${`box${i}`} class="box">${
+
+    //if argument to onclick function is string then use '' or "" instead of ``
+    //If num is " "
+    //  '${num}' -> (' ')
+    //  `${num}` -> ( )
+
+    board += `<div onclick="swapNumbers('${num}')" id=${`box${i}`} class="box">${
       startNumber[i]
     }</div>`;
   }
@@ -17,10 +23,15 @@ function updateView() {
 }
 
 function swapNumbers(num) {
+  // num = num ?? " ";
   console.log(num);
+  console.log(startNumber);
   startNumber = startNumber
-    .replace(" ", "X")
+    .replace(" ", "x")
     .replace(num, " ")
-    .replace("X", num);
+    .replace("x", num);
+
+  console.log(startNumber);
+
   updateView();
 }
