@@ -7,8 +7,20 @@ function updateView() {
 
   let board = "";
   for (let i = 0; i < startNumber.length; i++) {
-    board += `<div id=${`box${i}`} class="box">${startNumber[i]}</div>`;
+    const num = startNumber[i];
+    board += `<div onclick="swapNumbers(${num})" id=${`box${i}`} class="box">${
+      startNumber[i]
+    }</div>`;
   }
 
   app.innerHTML = board;
+}
+
+function swapNumbers(num) {
+  console.log(num);
+  startNumber = startNumber
+    .replace(" ", "X")
+    .replace(num, " ")
+    .replace("X", num);
+  updateView();
 }
