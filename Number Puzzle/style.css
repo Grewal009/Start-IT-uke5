@@ -1,0 +1,20 @@
+#root {
+  width: 200px;
+  height: 200px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+}
+.box {
+  border: 2px solid gray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  user-select: none;
+}
+.box:hover {
+  font-size: 35px;
+  font-weight: 600;
+  cursor: pointer;
+}
