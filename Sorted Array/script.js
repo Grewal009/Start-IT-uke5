@@ -1,4 +1,4 @@
-let numbers = [1, 4, 6, 8, 0];
+let numbers = [1, 900, 99, 80, 4, 6, 8, 0];
 
 //displayNumbers();
 function displayNumbers() {
@@ -20,3 +20,26 @@ function sortNumbers() {
   }
   return true;
 }
+
+//sort numeric array in ascending order
+function sortNumericArrayAsc(numArray) {
+  numArray.sort((a, b) => a - b);
+}
+function sortNumericArrayDesc(numArray) {
+  numArray.sort((a, b) => b - a);
+}
+console.log(numbers);
+sortNumericArrayAsc(numbers);
+console.log("array sorted in ascending order: ", numbers);
+
+sortNumericArrayDesc(numbers);
+console.log("array sorted in descending order: ", numbers);
+
+//sort alphabetically array
+function sortAlphabeticallyArray(arr) {
+  console.log("array : ", arr);
+  arr.sort();
+  console.log("sorted array : ", arr);
+}
+
+sortAlphabeticallyArray(["apple", "mango", "banana"]);
