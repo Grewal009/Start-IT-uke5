@@ -44,7 +44,7 @@ function check(element) {
     element.classList.remove("lightOn");
     endTime = new Date().getTime();
     console.log("endTime : ", endTime);
-    timeTaken = ((endTime - startTime) / 1000).toFixed(1);
+    timeTaken = Number(((endTime - startTime) / 1000).toFixed(1));
     bestTime =
       bestTime == 0 ? timeTaken : bestTime < timeTaken ? bestTime : timeTaken;
     updateView();
